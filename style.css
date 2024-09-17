@@ -1,0 +1,333 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+body {
+    font-family: "Chakra Petch", sans-serif; 
+    background-color: #DDDDDD; 
+    background-image: url("src/magic_the_gathering__mtg__wallpaper.jpg"); 
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    height: 100vh; 
+    margin: 0; 
+    padding: 0; 
+}
+
+h1 {
+    font-size: 4rem; 
+    color: #EB5B00; 
+    text-align: center; 
+    letter-spacing: 0.4rem; 
+    text-shadow: 1px 1px 1px #FABC3F;
+}
+
+section {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    margin-bottom: 3rem;
+    
+}
+
+section input {
+    width: 33rem; 
+    height: 3rem;
+    border: none; 
+    padding: 1rem; 
+    border-radius: 1.5rem; 
+    margin-bottom: 1rem; 
+    color: #45474B; 
+    font-size: 1rem;
+    box-sizing: border-box; 
+}
+
+.searchButton {
+    padding: 0.8rem 1.2rem; 
+    border: none; 
+    border-radius: 1.5rem; 
+    background-color: #30475E; 
+    border-color: #EB5B00;
+    border-style: solid;
+    color: #F5F7F8; 
+    font-size: 1.5rem; 
+    cursor: pointer; 
+}
+
+.searchButton:hover {
+    background-color: #30475E; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.results-search {
+    width: 60rem; 
+    height: 46vh; 
+    overflow-y: auto; 
+    margin-top: 1rem; 
+    padding: 1rem; 
+    border-radius: 0.6rem;
+}
+
+/* Style each item from result */
+.item-results {
+    background: #FFFFFF;  
+    border-radius: 5rem; 
+    padding: 0rem; 
+    margin-bottom: 1rem; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between; 
+    align-items: center; 
+    order: 1;
+}
+
+.cardDescription{
+    flex: 1;
+    font-family: "Pacifico",Arial, Helvetica;
+    font-size: 1rem;
+    color: #222831;
+    text-align: center;
+    align-content: center;
+}
+/* Style the titles inside the results itens */
+
+.item-resultado h2 {
+    font-size: 1.5rem; 
+    color: #222831;
+    align-self: center;
+    text-shadow: 0.5px 0.5px 1px black;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+.cardCharacteristics {
+    font-family: "Pacifico",Arial, Helvetica;
+    font-size: 1.2rem;
+    
+    border-radius: 0.5rem;
+    border-style: double;
+    border-color: #222831;
+    color: #222;
+    position: absolute;
+    top: -250px; /* Adjust the top position as needed */
+    left: 700px; /* Position within the cardData div */
+    transform: translateX(-50%); /* Center horizontally within the cardData div */
+    z-index: 2;  
+}
+.cardData {
+    position: relative; /* Necessary for positioning cardCharacteristics */
+  }
+
+.cardImg{
+    max-width: 75%; /* Adjust the maximum width as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Style the meta description inside result item */
+.description-meta {
+    color: #45474B; 
+    margin: 0.5rem 2rem 0.5rem 2rem ;  
+    text-align: justify;
+    font-weight: bold;         
+}
+/* Style the links inside the result item */
+
+.item-results a {
+    text-decoration: none; 
+    color: #30475E; 
+    display: flex;
+    order: 2;
+    font-size: 1.25rem; 
+}
+
+.item-results a:hover {
+    text-decoration: underline; 
+}
+
+.noResults{
+    font-size: 1.5rem;
+    color: #30475E;
+    background-color: #DDDDDD;
+    border-radius: 1rem;
+}
+
+.menuSymbol{
+    display: flex;
+    gap: 20px;
+    padding-bottom: 0.5rem; 
+}
+
+#manaColor{
+    display: flex;
+    justify-content: center;
+    background: black;
+    text-decoration: none;
+    color: #DDDDDD;
+    width: 2rem;
+    height: 2rem;
+    position: relative;
+    aspect-ratio: 1;
+    font-size: 1.5rem;
+    border-radius: 50%;
+}
+
+    /* animation */
+@property --fill {
+    syntax: '<percentage>';
+    inherits: true;
+    initial-value: 0%;
+}
+/*Black*/
+.manaBlack::after{
+    cursor: pointer;
+
+    position: absolute;
+    z-index: -1;
+    content: "";
+    inset: -3px;
+    border-radius: inherit;
+    background: conic-gradient(#F5F7F8,transparent var(--fill)); 
+    transition: --fill 0.6s ease-in-out;
+}
+
+.manaBlack:hover {
+    color: #F5F7F8;
+    --fill: 100%;
+}
+
+/*white*/
+.manaWhite::after{
+    position: absolute;
+    z-index: -1;
+    content: "";
+    inset: -3px;
+    border-radius: inherit;
+    background: conic-gradient(#F6E96B,transparent var(--fill)); 
+    transition: --fill 0.6s ease-in-out;
+}
+.manaWhite:hover {
+    color: #F6E96B;
+    --fill: 100%;
+}
+
+/*Red*/
+.manaRed::after{
+    position: absolute;
+    z-index: -1;
+    content: "";
+    inset: -3px;
+    border-radius: inherit;
+    background: conic-gradient(#800000,transparent var(--fill)); 
+    transition: --fill 0.6s ease-in-out;
+}
+.manaRed:hover {
+    color: #800000;
+    --fill: 100%;
+}
+
+/*Blue*/
+.manaBlue::after{
+    position: absolute;
+    z-index: -1;
+    content: "";
+    inset: -3px;
+    border-radius: inherit;
+    background: conic-gradient(#5B99C2,transparent var(--fill)); 
+    transition: --fill 0.6s ease-in-out;
+}
+.manaBlue:hover {
+    color: #5B99C2;
+    --fill: 100%;
+}
+
+/*Green*/
+.manaGreen::after{
+    position: absolute;
+    z-index: -1;
+    content: "";
+    inset: -3px;
+    border-radius: inherit;
+    background: conic-gradient(#387F39,transparent var(--fill)); 
+    transition: --fill 0.6s ease-in-out;
+}
+.manaGreen:hover {
+    color: #387F39;
+    --fill: 100%;
+}
+
+.blackManaButton {
+    cursor: pointer; 
+    border: none; 
+    padding: 0; 
+    background-color: transparent; 
+    width: 50px; 
+    height: 50px; 
+  }
+
+/* Style the page footer */
+footer {
+    background-color: #F5F7F8; 
+    color: #45474B; 
+    text-align: center; 
+    padding: 0; 
+    width: 100%; 
+    position: absolute; 
+    bottom: 0; 
+    font-size: 1rem; 
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem; 
+        letter-spacing: 0.2rem; 
+    }
+
+    section input {
+        width: 25rem; 
+        padding: 0.8rem; 
+    }
+
+    .resultados-pesquisa {
+        width: 40rem; 
+        height: 40vh; 
+    }
+
+    .item-resultado h2 {
+        font-size: 1.3rem; 
+    }
+}
+
+/* Celphone responsive */
+@media (max-width: 480px) {
+
+    h1 {
+        font-size: 1.8rem; 
+        letter-spacing: 0.1rem; 
+    }
+
+    section input {
+        width: 17rem; 
+    }
+
+    section button {
+        padding: 0.6rem 1rem; 
+        font-size: 0.9rem; 
+    }
+
+    .resultados-pesquisa {
+        width: 90%; 
+        height: 50vh; 
+    }
+
+    .item-resultado h2 {
+        font-size: 1.1rem; 
+    }
+
+    footer {
+        font-size: 0.9rem; 
+    }
+}
