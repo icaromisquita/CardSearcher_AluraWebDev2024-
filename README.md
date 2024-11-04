@@ -1,5 +1,3 @@
-Absolutely! Here's a README you can use for your Magic: the Gathering card searcher project:
-
 ## Magic: the Gathering Card Searcher
 
 This is a web application designed to search for Magic: the Gathering cards based on user input.  Users can search by:
